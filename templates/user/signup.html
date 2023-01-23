@@ -1,0 +1,52 @@
+{% extends "user/layout.html"%}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-3">
+        User Registration
+    </h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category,message in messages %}
+            <div class="alert alert-{{category}}">
+                <strong>{{message}}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+                    <form action="" method="POST" style="background-color: rgba(255, 255, 255, 0.1);box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05)">
+                        <div class="my-2">
+                            <label for=""><b>Enter Your First Name</b></label>
+                            <input type="text" name="fname" id="fname" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Last Name</b></label>
+                            <input type="text" name="lname" id="lname" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your UserName</b></label>
+                            <input type="text" name="username" id="username" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Email</b></label>
+                            <input type="email" name="email" id="email" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Phone Number</b></label>
+                            <input type="tel" name="phone" id="phone" title="Please use a 10 digit telephone number with no dashes or dots" class="form-control my-1" pattern="[0-9]{10}" required /> <i>10 digits</i>
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Password</b></label>
+                            <input type="password" name="password" id="password" class="form-control my-1">
+                        </div>
+                        <button class="btn btn-success">Signup</button>
+                        <button class="btn btn-success"><a href="/user/" style="color:white ;text-decoration: none">Login</a></button>
+                        <button class="btn btn-success"><a href="/" style="color:white ;text-decoration: none">Go Back</a></button>
+
+                    </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

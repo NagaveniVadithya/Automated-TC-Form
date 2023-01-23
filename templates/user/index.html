@@ -1,0 +1,36 @@
+{% extends "user/layout.html"%}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-3">
+        User Login
+    </h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category,message in messages %}
+            <div class="alert alert-{{category}}">
+                <strong>{{message}}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+                    <form action="" method="POST" style="background-color: rgba(0, 0, 0, 0)">
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Email</b></label>
+                            <input type="email" name="email" id="email" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Enter Your Password</b></label>
+                            <input type="password" name="password" id="password" class="form-control my-1">
+                        </div>
+                        <button class="btn btn-success">Login</button>
+                        <button class="btn btn-success"><a href="/" style="color:white ;text-decoration: none">Go Back</a></button>
+                        <button class="btn btn-success"><a href="/user/signup" style="color:white ;text-decoration: none">Signup</a></button>
+                    </form>
+               
+        </div>
+    </div>
+</div>
+{% endblock content %}

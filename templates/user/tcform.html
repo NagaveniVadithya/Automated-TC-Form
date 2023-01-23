@@ -1,0 +1,109 @@
+{% extends "user/layout.html"%}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-3">
+        Transfer Certificate
+    </h1>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category,message in messages %}
+            <div class="alert alert-{{category}}">
+                <strong>{{message}}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+                    <form id= "tc" action="" method="POST" style="background-color: rgba(255, 255, 255, 0.1);box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05)">
+                        <div class="my-2">
+                            <label for=""><b>Student Name</b></label>
+                            <input type="text" name="name" id="name" class="form-control my-1">
+                        </div>
+                        <div>
+                            <label for=""><b>Gender</b></label>
+                            <select name="gender" id="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        <div class="my-2">
+                            <label for=""><b>Father's Name</b></label>
+                            <input type="text" name="fname" id="name" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Mother's Name</b></label>
+                            <input type="text" name="mname" id="mname" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Date Of Birth ( DD/MM/YYYY) </b></label>
+                            <input type="date" name="dob" id="dob" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Nationality</b></label>
+                            <input type="text" name="nation" id="nation" value="Indian" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Whether the Candidate belongs to S.C/S.T/O.B.C</b></label>
+                            <select name="caste" id="caste">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Date of Admission</b></label>
+                            <input type="date" name="doa" id="doa" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Class/Course Enrolled In</b></label>
+                            <input type="text" name="course" id="course" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Academic Year From</b></label>
+                            <input type="date" name="afrom" id="afrom" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Academic Year To</b></label>
+                            <input type="date" name="ato" id="ato" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Whether Qualified for promotion to higher studies</b></label>
+                            <select name="qualified" id="qualified">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Whether the Student has paid all dues to the Institution</b></label>
+                            <select name="dues" id="dues">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>General Conduct</b></label>
+                            <input type="text" name="conduct" id="conduct" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Date Of issue of Certificate( DD/MM/YYYY) </b></label>
+                            <input type="date" name="dissue" id="dissue" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Reason for leaving the College</b></label>
+                            <input type="text" name="reason" id="reason" class="form-control my-1">
+                        </div>
+                        <div class="my-2">
+                            <label for=""><b>Any Remarks</b></label>
+                            <input type="text" name="remarks" id="remarks" class="form-control my-1">
+                        </div>
+                        
+                        <button class="btn btn-success">Submit & Download TC</button>
+
+                        <button class="btn btn-success"><a href="/user/dashboard" style="color:white ;text-decoration: none">Go Back</button>
+
+
+                    </form>
+    </div>
+</div>
+{% endblock content %}
